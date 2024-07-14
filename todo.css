@@ -1,0 +1,135 @@
+body{
+    background: radial-gradient( #260b7f, #433098, rgb(77, 83, 133));
+}
+.container{
+    display: grid;
+    /*height: auto;*/
+    max-height: 100vh;
+    grid-template-rows: 0.5fr 1fr 4fr 0.5fr;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas: 
+    ". . ."
+    ". task-container ."
+    ". taskList ."
+    ". . ."
+    ;
+}
+
+#task-container{
+    grid-area: task-container;
+    background-color: rgb(231, 231, 231);
+    border-radius: 2%;
+    /*height: 95vh;*/
+}
+
+#heading{
+    margin-bottom: 0;
+    text-align: center;
+    font-family: sans-serif;
+    color: rgb(21, 21, 64);
+}
+
+.wrapper{
+    width: 80%; height: 25px;
+    max-width: 100%;
+    position: relative;
+    margin-top: 15px;
+    margin-left: 10%;
+    text-align: center;            /*applying on the container for effect on children*/
+}
+
+.wrapper > input{
+    height: 28px;
+    background-color: rgb(160, 160, 160); border: 1px solid white;
+    padding: 2px;
+    width: 90%; 
+    color: rgb(48, 47, 47); font-size: x-large; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.wrapper > input:hover{
+    box-shadow: inset rgb(48, 42, 42);
+}
+
+.wrapper > button{
+    background-color: orangered;
+    border: 1px solid orangered;
+    font-size: large; font-family: sans-serif; font-weight: bolder;
+    padding: auto;
+    height: 32px;
+    aspect-ratio: 1;
+    position: absolute; right: 4.5%;
+    margin-top: 0.75px;
+}
+
+.wrapper > button:hover, .wrapper > button:active{
+    background-color: green;
+    transition: background-color 0.5s ease;
+}
+
+ul li{
+    list-style: none;
+    padding-left: 3%;
+    padding-bottom: 12px; padding-top: 12px;
+    font-size: x-large; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: relative;
+    color: rgb(74, 73, 73);
+}
+
+ul li:first-child{
+    padding-top: 15px;
+}
+
+ul > li > span{
+    position: absolute;
+    right: 0px; 
+    top: 15px; padding-top: 2px; padding-bottom: 2px;
+    width: 30px; height: 30px;
+    margin-right: 5%;
+    font-weight: bolder;
+    font-size: x-large;
+    color: rgb(141, 43, 43);
+    cursor: pointer; text-align: center;
+}
+
+ul > li > span:hover{
+    background-color: rgba(120, 122, 123, 0.8);
+    border-radius: 50%;
+    /*transition: 0.2s ease-in-out;*/
+}
+
+/*ul > li > span:first-child{
+    top: 18px;
+}*/
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-rows: 0.25fr 0.75fr 4fr 0.25fr;
+        grid-template-columns: 0.25fr 4fr 0.25fr;
+    }
+    
+    ul > li{
+        padding-left: 2%;
+    }
+}
+
+@media (max-width: 450px){
+    .wrapper > input{
+        width: 95%;
+        font-size: medium;
+    }
+
+    .wrapper > button{
+        right: 2%;
+    }
+    
+    ul > li{
+        font-size: medium;
+        padding-left: 2%;
+    }
+
+    ul > li > span{
+        top: 8px;
+    }
+
+}
